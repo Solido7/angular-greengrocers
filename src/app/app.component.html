@@ -1,9 +1,16 @@
 <header id="store">
   <h1>Greengrocers</h1>
-  <!-- your store here -->
+  <app-list></app-list>
 </header>
 <main id="cart">
   <h2>Your Cart</h2>
-  <!-- your cart here -->
-  <!-- your total here -->
+  <div class="cart--item-list-container">
+    <ul class="item-list cart--item-list">
+      <app-cart *ngFor="let item of cart" [item]="item" (add)="increaseItem($event)" (remove)="decreaseItem($event)"/>
+    </ul>
+  </div>
+  <h3>Total</h3>
+  <div>
+    <span class="total-number">{{cartTotal() | currency}}</span>
+  </div>
 </main>
