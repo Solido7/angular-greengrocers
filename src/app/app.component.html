@@ -1,5 +1,10 @@
 <header id="store">
   <h1>Greengrocers</h1>
+  <select (change)="sortItems()" [(ngModel)]="sortBy">
+    <option value="none">None</option>
+    <option value="name">Name</option>
+    <option value="price">Price</option>
+  </select>
   <app-list></app-list>
 </header>
 <main id="cart">

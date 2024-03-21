@@ -10,6 +10,7 @@ export class ItemService {
   http = inject(HttpClient);
   apiUrl = 'https://boolean-api-server.fly.dev/groceries'
   items: Promise<Item[]> = Promise.resolve(this.getItems())
+  originalItems: Promise<Item[]> = Promise.resolve(this.getItems())
   cart: Array<CartItem> = []
   
   async getItems(): Promise<Array<Item>> {
